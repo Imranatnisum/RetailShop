@@ -1,0 +1,64 @@
+<html>
+  <head>
+    <title>Reading List</title>
+    
+  </head>
+
+  <body>
+    <h2>Customer profile  </h2>
+    
+     <h2> Welcome <span th:text="${customer.name}"></span> </h2>
+   
+   
+   <div th:unless="${#lists.isEmpty(customer.cartList)}">
+      <h3>Items in the cart</h3>
+   
+     <tbody>
+  <tr th:each="item: ${customer.cartList}" >
+        <span th:text="${item.name}" /> .Price is 
+        <span th:text="${item.price}" /> $<br/>
+       
+    </tr>
+    
+ 
+</tbody>
+
+<br/> <br/> 
+  
+  <form action="/logincheck" method="get">
+  
+     <input type="hidden" name="email" th:value="${customer.email}"/> 
+     
+     <input type="submit" value="proceed to checkout"/>
+  
+  </form>
+</div>
+
+ <div th:if="${#lists.isEmpty(customer.cartList)}">
+      <p>You have no items in the cart</p>
+    </div>
+   
+    
+  
+  
+    
+    <hr/>
+    
+    <h3>Please select items to add to cart</h3>
+   <form action="/loginAddCart" method="get">
+  
+     <input type="hidden" name="email" th:value="${customer.email}"/> 
+     
+     
+     <input type="checkbox" name="checkbox" value="Mac pro"> Macbook pro laptop .price 1848$</input>
+     
+     
+       
+     
+     
+     <input type="submit" value="submit"/>
+  
+  </form>
+    
+  </body>
+</html>

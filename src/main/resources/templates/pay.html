@@ -1,0 +1,46 @@
+<html>
+  <head>
+    <title>Item in the cart</title>
+    
+  </head>
+
+  <body>
+    
+    
+     
+   
+      <h3>Items to be delivered.Total amount to be paid is <span th:text="${topay}" />$ </h3>
+      
+     
+   
+     <tbody>
+  <tr th:each="item: ${customer.itemList}" >
+        <span th:text="${item.name}" /> .Price is 
+        <span th:text="${item.price}" /> <br/>
+       
+    </tr>
+    
+ 
+</tbody>
+   
+    
+  <br/> <br/> 
+  
+   
+  
+  <form action="/loginpay" method="get">
+  
+     
+     <input type="hidden" name="email" th:value="${customer.email}"/> 
+     
+     <input type="submit" value="ConfirmPayment"/>
+  
+  </form>
+  
+    
+    <hr/>
+    
+    
+    
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"> </meta>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<title>Insert title here</title>
+</head>
+<body ng-app="myApp">
+
+      <h1 align="center">Registration page</h1>
+      
+      
+       <form action="/register" method="post" align="center">
+  
+  
+           Name:<input type="text" name="name" ng-model="name" required/> </br> </br>
+           
+           Email    : <input type="email" name="email" placeholder="abc@gmail.com"  ng-maxlength="100" ng-pattern="/^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/" required /> </br> </br>
+      
+       
+       
+         
+       
+       
+          Password:<input type="password" name="password" ng-model="password" required/> </br> </br>
+        
+        
+         
+        
+          Address:<input type="text" name="location" ng-model="address" required/> </br> </br>
+         
+         
+         
+        
+              </br> </br> 
+            
+            <input type="submit" value="Register"/>
+     
+</form>
+    
+
+</body>
+</html>

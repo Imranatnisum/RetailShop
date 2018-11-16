@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"></meta>
+<title>Insert title here</title>
+</head>
+<body>
+
+
+  <h2> Following items shall be delivered</h2>
+
+   <tbody>
+  <tr th:each="item: ${itemList}" >
+        <span th:text="${item.name}" /> .Price is 
+        <span th:text="${item.price}" /> $<br/>
+       
+    </tr>
+    
+ 
+</tbody>
+
+
+         <h3> Thank for shopping with Retail shop   </h3>
+         
+         <h3> your items shall be delivered by tomorrow 8pm </h3>
+         
+      
+</body>
+</html>

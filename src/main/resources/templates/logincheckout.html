@@ -1,0 +1,96 @@
+<html>
+  <head>
+    <title>Item in the cart</title>
+    
+    
+    
+    
+  </head>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"/>
+
+
+
+
+  <body>
+    
+    
+     
+   
+      <h3>Items in the cart .Total amount to be paid is <span th:text="${sumCartPrice}" /> $</h3>
+      
+     
+   
+     <tbody>
+  <tr th:each="item: ${customer.cartList}" >
+        <span th:text="${item.name}" /> .Price is 
+        <span th:text="${item.price}" />$ <br/>
+       
+    </tr>
+    
+ 
+</tbody>
+   
+    
+  <br/> <br/> 
+  
+   <h3> You can modify elements in the cart </h3>
+   
+   
+   
+   
+   
+  
+ 
+  <form action="/loginpaycheck" method="get"> 
+  
+      <input type="hidden" name="email" th:value="${customer.email}"/>  
+     
+        <label th:each="item: ${customer.cartList}"> 
+                <input type="checkbox" name="checkbox"                        
+                     th:value="${item.name}" 
+                    
+                         th:text="${item.name}" > 
+                </input> 
+              </label> 
+  
+     
+      <input type="submit" value="pay" />  
+     
+
+      
+      
+  
+ </form> 
+  
+   
+  
+  <!-- <div ng-app=""> 
+  <form action="/loginpaycheck" method="get"> 
+  
+      <input type="hidden" name="email" th:value="${customer.email}"/>  
+     
+        <label th:each="item: ${customer.cartList}"> 
+                <input type="checkbox" name="checkbox"                        
+                     th:value="${item.name}" 
+                    
+                         th:text="${item.name}" ng-model="var"> 
+                </input> 
+              </label> 
+  
+     
+      <input type="submit" value="pay" ng-show="var"/>  
+     
+
+      
+      
+  
+ </form> 
+ </div>    -->
+    
+    <hr/>
+    
+    
+    
+  </body>
+</html>
