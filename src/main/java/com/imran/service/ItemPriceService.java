@@ -1,5 +1,7 @@
 package com.imran.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,6 +26,11 @@ public class ItemPriceService {
 		return item;
 		
 		
+	}
+	
+	public List<Item> findItems()
+	{
+		return itemPriceDao.findItems();
 	}
 
 }

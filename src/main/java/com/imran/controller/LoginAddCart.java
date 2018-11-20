@@ -72,10 +72,11 @@ public class LoginAddCart {
 		    
 		    loginpayService.saveCustomer(customer);
 		    
+		    List<Item> allItems=itemPriceService.findItems();
+		    
 		    
 		  model.addAttribute("customer", customer);
-		  
-		//  model.addAttribute("topay", topay);
+		
 		  
 		  
 		   return "loginhome";

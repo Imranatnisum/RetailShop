@@ -1,5 +1,7 @@
 package com.imran.dao;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -21,6 +23,11 @@ public class ItemPriceDao {
 		
 		return item;
 		  
+	}
+	
+	public List<Item> findItems()
+	{
+		return itemRepository.findAll();
 	}
 
 }

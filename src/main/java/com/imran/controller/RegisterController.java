@@ -14,6 +14,7 @@ import com.imran.Address;
 import com.imran.Customer;
 import com.imran.CustomerRepository;
 import com.imran.Item;
+import com.imran.service.ItemPriceService;
 import com.imran.service.LoginpayService;
 import com.imran.service.RegisterService;
 
@@ -33,6 +34,12 @@ public class RegisterController {
 	  
 	 @Autowired
 	 LoginpayService loginpayService;
+	 
+	 @Autowired
+		ItemPriceService itemPriceService;
+	 
+	 
+	 
 	
 	
 	
@@ -153,6 +160,7 @@ public class RegisterController {
              
              customer.setLogged(true);
              
+     	    List<Item> allItems=itemPriceService.findItems();
              
               
              loginpayService.saveCustomer(customer);
@@ -160,7 +168,7 @@ public class RegisterController {
                
                model.addAttribute("customer", customer);
                
-               
+               model.addAttribute("allitems",allItems);
             
                
                
